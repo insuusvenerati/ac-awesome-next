@@ -1,0 +1,3 @@
+[submodule "acnhapi"]
+	path = acnhapi
+	url = https://github.com/insuusvenerati/ACNHAPI
