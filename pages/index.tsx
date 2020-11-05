@@ -2,8 +2,9 @@ import Fuse from "fuse.js";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { Container, Form, FormControl, Navbar, Row } from "react-bootstrap";
-import { VillagerItem } from "../components/Villager";
+import { Card, Container, Grid } from "semantic-ui-react";
+import { CustomNavbar } from "../components/Navbar";
+import { Villagers } from "../components/Villagers";
 import { useDebounce } from "../hooks/useDebounce";
 import { Villager } from "../types/villagers";
 
@@ -16,7 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
 export default function Home({ villagers }: { villagers: Villager[] }) {
   const [query, setQuery] = useState("");
   const [villagerResults, setVillagerResults] = useState<Villager[]>([]);
-  const debouncedSearchTerm = useDebounce(query, 1000);
+  const debouncedSearchTerm = useDebounce(query, 500);
 
   const fuse = new Fuse(villagers, {
     keys: ["name.name-USen", "species"],
@@ -39,26 +40,17 @@ export default function Home({ villagers }: { villagers: Villager[] }) {
       <Head>
         <title>Villagers</title>
       </Head>
-      <Navbar className="bg-light mb-4 justify-content-between">
-        <h1>Villagers</h1>
-        <Form inline>
-          <FormControl
-            value={query}
-            onChange={handleSearch}
-            type="text"
-            placeholder="Search"
-            className="mr-sm-2"
-          />
-        </Form>
-      </Navbar>
-      <Container fluid>
-        <Row>
-          {villagerResults &&
-            villagerResults.map((villager: Villager) => (
-              <VillagerItem key={villager.id} villager={villager} />
-            ))}
-        </Row>
+      <CustomNavbar handleSearch={handleSearch} query={query} />
+
+      {/* <Grid container columns={4}>
+        <Grid.Row> */}
+      <Container>
+        <Card.Group itemsPerRow={4}>
+          <Villagers villagers={villagerResults} />
+        </Card.Group>
       </Container>
+      {/* </Grid.Row> */}
+      {/* </Grid> */}
     </>
   );
 }
