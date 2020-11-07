@@ -1,10 +1,11 @@
 import Fuse from "fuse.js";
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import React, { ChangeEvent, useEffect, useState } from "react";
-import { Card, Container, Grid } from "semantic-ui-react";
+import React, { ChangeEvent, useContext, useEffect, useState } from "react";
+import { Card, Container } from "semantic-ui-react";
 import { CustomNavbar } from "../components/Navbar";
 import { Villagers } from "../components/Villagers";
+import { FilterContext } from "../context/FilterContext";
 import { useDebounce } from "../hooks/useDebounce";
 import { Villager } from "../types/villagers";
 
@@ -15,6 +16,7 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 export default function Home({ villagers }: { villagers: Villager[] }) {
+  const { results } = useContext(FilterContext);
   const [query, setQuery] = useState("");
   const [villagerResults, setVillagerResults] = useState<Villager[]>([]);
   const debouncedSearchTerm = useDebounce(query, 500);
@@ -22,6 +24,7 @@ export default function Home({ villagers }: { villagers: Villager[] }) {
   const fuse = new Fuse(villagers, {
     keys: ["name.name-USen", "species"],
     includeScore: true,
+    threshold: 0.1,
   });
 
   function handleSearch(event: ChangeEvent<HTMLInputElement>): void {
@@ -35,22 +38,25 @@ export default function Home({ villagers }: { villagers: Villager[] }) {
       : setVillagerResults(villagers);
   }, [debouncedSearchTerm]);
 
+  function VillagerFromDataorFilter() {
+    if (results.length > 0) {
+      return <Villagers villagers={results.map((result) => result.item)} />;
+    }
+    return <Villagers villagers={villagerResults} />;
+  }
+
   return (
     <>
       <Head>
         <title>Villagers</title>
       </Head>
-      <CustomNavbar handleSearch={handleSearch} query={query} />
+      <CustomNavbar villagers={villagers} handleSearch={handleSearch} query={query} />
 
-      {/* <Grid container columns={4}>
-        <Grid.Row> */}
-      <Container>
-        <Card.Group itemsPerRow={4}>
-          <Villagers villagers={villagerResults} />
+      <Container className="p-4" fluid>
+        <Card.Group itemsPerRow={5}>
+          <VillagerFromDataorFilter />
         </Card.Group>
       </Container>
-      {/* </Grid.Row> */}
-      {/* </Grid> */}
     </>
   );
 }
