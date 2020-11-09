@@ -1,4 +1,3 @@
-import Fuse from "fuse.js";
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import React, { ChangeEvent, useContext, useEffect, useState } from "react";
@@ -16,45 +15,56 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 export default function Home({ villagers }: { villagers: Villager[] }) {
-  const { results } = useContext(FilterContext);
-  const [query, setQuery] = useState("");
-  const [villagerResults, setVillagerResults] = useState<Villager[]>([]);
-  const debouncedSearchTerm = useDebounce(query, 500);
+  const { filterResults } = useContext(FilterContext);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState<Villager[]>([]);
+  const debouncedSearchTerm: string = useDebounce(searchQuery, 1000);
 
-  const fuse = new Fuse(villagers, {
-    keys: ["name.name-USen", "species"],
-    includeScore: true,
-    threshold: 0.1,
-  });
+  async function getResults(data = {}) {
+    const searchResults = await fetch("http://127.0.0.1:7700/indexes/villagers/search", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
-  function handleSearch(event: ChangeEvent<HTMLInputElement>): void {
-    setQuery(event.currentTarget.value);
+    const response = searchResults.json();
+    return response;
   }
 
-  useEffect(() => {
-    const results = fuse.search(debouncedSearchTerm);
-    debouncedSearchTerm
-      ? setVillagerResults(results.map((result) => result.item))
-      : setVillagerResults(villagers);
+  function handleSearch(event: ChangeEvent<HTMLInputElement>) {
+    setSearchQuery(event.currentTarget.value);
+  }
+
+  useEffect(async () => {
+    if (debouncedSearchTerm) {
+      const searchResults = await getResults({ q: debouncedSearchTerm });
+      setSearchResults(searchResults.hits);
+    }
+    if (!debouncedSearchTerm) {
+      setSearchResults([]);
+    }
   }, [debouncedSearchTerm]);
 
-  function VillagerFromDataorFilter() {
-    if (results.length > 0) {
-      return <Villagers villagers={results.map((result) => result.item)} />;
-    }
-    return <Villagers villagers={villagerResults} />;
-  }
+  const VillagerFromResults = () => {
+    if (searchResults.length > 0) return <Villagers villagers={searchResults} />;
+    if (filterResults.length > 0) return <Villagers villagers={filterResults} />;
+    return <Villagers villagers={villagers.slice(0, 10)} />;
+  };
 
   return (
     <>
       <Head>
+        {console.log("filterResults", searchResults)}
+        {console.log("results", filterResults)}
         <title>Villagers</title>
       </Head>
-      <CustomNavbar villagers={villagers} handleSearch={handleSearch} query={query} />
+      <CustomNavbar villagers={villagers} handleSearch={handleSearch} query={searchQuery} />
 
-      <Container className="p-4" fluid>
+      <Container style={{ padding: 10 }} fluid>
         <Card.Group itemsPerRow={5}>
-          <VillagerFromDataorFilter />
+          <VillagerFromResults />
         </Card.Group>
       </Container>
     </>

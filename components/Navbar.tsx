@@ -7,7 +7,6 @@ import { FilterForm } from "./FilterOptions";
 export const CustomNavbar = ({
   query,
   handleSearch,
-  villagers,
 }: {
   query: string;
   handleSearch: (event: ChangeEvent<HTMLInputElement>) => void;
