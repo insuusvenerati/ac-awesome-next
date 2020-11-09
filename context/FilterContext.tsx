@@ -34,13 +34,12 @@ export const FilterContextProvider: React.FC = ({ children }) => {
     return resultsFromApi.json();
   }
 
-  useEffect(async () => {
-    if (filterQuery?.toString()?.length > 0) {
-      const filterResults = await getResults({ q: filterQuery?.toString() });
-      setFilterResults(filterResults.hits);
+  useEffect(() => {
+    if (filterQuery) {
+      getResults({ q: filterQuery?.toString() }).then((data) => setFilterResults(data.hits));
     }
 
-    if (filterQuery?.toString().length < 1) {
+    if (!filterQuery) {
       setFilterResults([]);
     }
   }, [filterQuery]);

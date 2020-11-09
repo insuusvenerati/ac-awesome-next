@@ -7,8 +7,8 @@ dependencies:
   semantic-ui-css: 2.4.1
   semantic-ui-react: 2.0.1_react-dom@17.0.1+react@17.0.1
 devDependencies:
-  '@types/node': 14.14.6
-  '@types/react': 16.9.55
+  '@types/node': 14.14.7
+  '@types/react': 16.9.56
   typescript: 4.0.5
 lockfileVersion: 5.2
 packages:
@@ -1277,21 +1277,21 @@ packages:
     dev: false
     resolution:
       integrity: sha512-3c+yGKvVP5Y9TYBEibGNR+kLtijnj7mYrXRg+WpFb2X9xm04g/DXYkfg4hmzJQosc9snFNUPkbYIhu+KAm6jJw==
-  /@types/node/14.14.6:
+  /@types/node/14.14.7:
     dev: true
     resolution:
-      integrity: sha512-6QlRuqsQ/Ox/aJEQWBEJG7A9+u7oSYl3mem/K8IzxXG/kAGbV1YPD9Bg9Zw3vyxC/YP+zONKwy8hGkSt1jxFMw==
+      integrity: sha512-Zw1vhUSQZYw+7u5dAwNbIA9TuTotpzY/OF7sJM9FqPOF3SPjKnxrjoTktXDZgUjybf4cWVBP7O8wvKdSaGHweg==
   /@types/prop-types/15.7.3:
     dev: true
     resolution:
       integrity: sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
-  /@types/react/16.9.55:
+  /@types/react/16.9.56:
     dependencies:
       '@types/prop-types': 15.7.3
       csstype: 3.0.4
     dev: true
     resolution:
-      integrity: sha512-6KLe6lkILeRwyyy7yG9rULKJ0sXplUsl98MGoCfpteXf9sPWFWWMknDcsvubcpaTdBuxtsLF6HDUwdApZL/xIg==
+      integrity: sha512-gIkl4J44G/qxbuC6r2Xh+D3CGZpJ+NdWTItAPmZbR5mUS+JQ8Zvzpl0ea5qT/ZT3ZNTUcDKUVqV3xBE8wv/DyQ==
   /@webassemblyjs/ast/1.9.0:
     dependencies:
       '@webassemblyjs/helper-module-context': 1.9.0
@@ -5604,8 +5604,8 @@ packages:
     resolution:
       integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
 specifiers:
-  '@types/node': ^14.14.6
-  '@types/react': ^16.9.55
+  '@types/node': ^14.14.7
+  '@types/react': ^16.9.56
   fuse.js: ^6.4.3
   isomorphic-unfetch: ^3.1.0
   next: 10.0.1

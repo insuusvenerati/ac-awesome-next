@@ -7,6 +7,7 @@ import { Villagers } from "../components/Villagers";
 import { FilterContext } from "../context/FilterContext";
 import { useDebounce } from "../hooks/useDebounce";
 import { Villager } from "../types/villagers";
+import fetch from "isomorphic-unfetch";
 
 export const getStaticProps: GetStaticProps = async () => {
   const villagers: Villager[] = require("../acnhapi/v1a/villagers.json");
@@ -20,31 +21,27 @@ export default function Home({ villagers }: { villagers: Villager[] }) {
   const [searchResults, setSearchResults] = useState<Villager[]>([]);
   const debouncedSearchTerm: string = useDebounce(searchQuery, 1000);
 
-  async function getResults(data = {}) {
-    const searchResults = await fetch(
-      `${process.env.NEXT_PUBLIC_SEARCH_URL}/indexes/villagers/search`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-Meili-API-Key": process.env.NEXT_PUBLIC_API_KEY as string,
-        },
-        body: JSON.stringify(data),
-      }
-    );
+  async function getResults(query = {}) {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SEARCH_URL}/indexes/villagers/search`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Meili-API-Key": process.env.NEXT_PUBLIC_API_KEY as string,
+      },
+      body: JSON.stringify(query),
+    });
 
-    const response = searchResults.json();
-    return response;
+    const data = await response.json();
+    return data;
   }
 
   function handleSearch(event: ChangeEvent<HTMLInputElement>) {
     setSearchQuery(event.currentTarget.value);
   }
 
-  useEffect(async () => {
+  useEffect(() => {
     if (debouncedSearchTerm) {
-      const searchResults = await getResults({ q: debouncedSearchTerm });
-      setSearchResults(searchResults.hits);
+      getResults({ q: debouncedSearchTerm }).then((data) => setSearchResults(data.hits));
     }
     if (!debouncedSearchTerm) {
       setSearchResults([]);
@@ -60,8 +57,8 @@ export default function Home({ villagers }: { villagers: Villager[] }) {
   return (
     <>
       <Head>
-        {console.log("filterResults", searchResults)}
-        {console.log("results", filterResults)}
+        {console.log("searchResults", searchResults)}
+        {console.log("filterResults", filterResults)}
         <title>Villagers</title>
       </Head>
       <CustomNavbar villagers={villagers} handleSearch={handleSearch} query={searchQuery} />
