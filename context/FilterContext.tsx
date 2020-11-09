@@ -19,24 +19,28 @@ export const FilterContextProvider: React.FC = ({ children }) => {
   }
 
   async function getResults(data = {}) {
-    const resultsFromApi = await fetch("http://127.0.0.1:7700/indexes/villagers/search", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    const resultsFromApi = await fetch(
+      `${process.env.NEXT_PUBLIC_SEARCH_URL}/indexes/villagers/search`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Meili-API-Key": process.env.NEXT_PUBLIC_API_KEY as string,
+        },
+        body: JSON.stringify(data),
+      }
+    );
 
     return resultsFromApi.json();
   }
 
   useEffect(async () => {
     if (filterQuery?.toString()?.length > 0) {
-      const searchResults = await getResults({ q: filterQuery?.toString() });
-      setFilterResults(searchResults.hits);
+      const filterResults = await getResults({ q: filterQuery?.toString() });
+      setFilterResults(filterResults.hits);
     }
 
-    if (!filterQuery) {
+    if (filterQuery?.toString().length < 1) {
       setFilterResults([]);
     }
   }, [filterQuery]);

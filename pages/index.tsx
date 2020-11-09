@@ -21,13 +21,17 @@ export default function Home({ villagers }: { villagers: Villager[] }) {
   const debouncedSearchTerm: string = useDebounce(searchQuery, 1000);
 
   async function getResults(data = {}) {
-    const searchResults = await fetch("http://127.0.0.1:7700/indexes/villagers/search", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    const searchResults = await fetch(
+      `${process.env.NEXT_PUBLIC_SEARCH_URL}/indexes/villagers/search`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Meili-API-Key": process.env.NEXT_PUBLIC_API_KEY as string,
+        },
+        body: JSON.stringify(data),
+      }
+    );
 
     const response = searchResults.json();
     return response;

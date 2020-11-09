@@ -98,14 +98,14 @@ const genders = [
 const allFilterOptions = [...personalities, ...species, ...genders];
 
 export const FilterForm = () => {
-  const { handleChange, query } = useContext(FilterContext);
+  const { handleChange, filterQuery } = useContext(FilterContext);
 
   return (
     <>
       <Dropdown
         onChange={handleChange}
         text="Filter"
-        value={query}
+        value={filterQuery}
         clearable
         options={allFilterOptions}
         multiple
