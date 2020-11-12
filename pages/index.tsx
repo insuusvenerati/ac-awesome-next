@@ -57,8 +57,6 @@ export default function Home({ villagers }: { villagers: Villager[] }) {
   return (
     <>
       <Head>
-        {console.log("searchResults", searchResults)}
-        {console.log("filterResults", filterResults)}
         <title>Villagers</title>
       </Head>
       <CustomNavbar villagers={villagers} handleSearch={handleSearch} query={searchQuery} />
