@@ -1,11 +1,14 @@
 import "semantic-ui-css/semantic.min.css";
-import { FilterContextProvider } from "../context/FilterContext";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <FilterContextProvider>
+    <>
+      <Head>
+        <link rel="prefetch" href="https://acnhapi.com" />
+      </Head>
       <Component {...pageProps} />
-    </FilterContextProvider>
+    </>
   );
 }
 

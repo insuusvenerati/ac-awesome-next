@@ -1,6 +1,5 @@
-import { useContext } from "react";
-import { Dropdown } from "semantic-ui-react";
-import { FilterContext } from "../context/FilterContext";
+import { SyntheticEvent } from "react";
+import { Dropdown, DropdownProps, StrictDropdownProps } from "semantic-ui-react";
 
 const personalities = [
   {
@@ -97,8 +96,13 @@ const genders = [
 
 const allFilterOptions = [...personalities, ...species, ...genders];
 
-export const FilterForm = () => {
-  const { handleChange, filterQuery } = useContext(FilterContext);
+type FilterFormProps = {
+  handleChange: (event: SyntheticEvent<HTMLElement, Event>, data: DropdownProps) => void;
+  filterQuery: StrictDropdownProps["value"];
+};
+
+export const FilterForm = ({ handleChange, filterQuery }: FilterFormProps) => {
+  // const { handleChange, filterQuery } = useContext(FilterContext);
 
   return (
     <>

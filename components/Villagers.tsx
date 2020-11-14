@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Villager } from "../types/villagers";
-import { VillagerItem } from "./Villager";
+import VillagerItem from "./Villager";
 
 export const Villagers = ({ villagers }: { villagers: Villager[] }) => {
   return (

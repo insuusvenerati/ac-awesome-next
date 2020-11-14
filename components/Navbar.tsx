@@ -1,24 +1,30 @@
 import Link from "next/link";
-import React, { ChangeEvent } from "react";
-import { Form, Menu } from "semantic-ui-react";
+import React, { ChangeEvent, SyntheticEvent } from "react";
+import { DropdownProps, Form, Menu, StrictDropdownProps } from "semantic-ui-react";
 import { Villager } from "../types/villagers";
 import { FilterForm } from "./FilterOptions";
+
+type CustomNavbarProps = {
+  handleChange: (event: SyntheticEvent<HTMLElement, Event>, data: DropdownProps) => void;
+  filterQuery: StrictDropdownProps["value"];
+  query: string;
+  handleSearch: (event: ChangeEvent<HTMLInputElement>) => void;
+  villagers: Villager[];
+};
 
 export const CustomNavbar = ({
   query,
   handleSearch,
-}: {
-  query: string;
-  handleSearch: (event: ChangeEvent<HTMLInputElement>) => void;
-  villagers: Villager[];
-}) => {
+  handleChange,
+  filterQuery,
+}: CustomNavbarProps) => {
   return (
     <Menu>
       <Menu.Item>
         <h1>Awesome AC</h1>
       </Menu.Item>
       <Menu.Item>
-        <FilterForm />
+        <FilterForm filterQuery={filterQuery} handleChange={handleChange} />
       </Menu.Item>
 
       <Menu.Menu position="right">
