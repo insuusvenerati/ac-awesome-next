@@ -1,0 +1,14 @@
+[
+  {
+    "objectID": "321432",
+    "name": "lemon",
+    "categories.lvl0": "products",
+    "categories.lvl1": "products > fruits"
+  },
+  {
+    "objectID": "8976987",
+    "name": "orange",
+    "categories.lvl0": "products",
+    "categories.lvl1": "products > fruits"
+  }
+]
