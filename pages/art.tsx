@@ -14,7 +14,7 @@ const searchClient = instantMeiliSearch(
 
 const ArtView = ({ hits }: { hits: Art[] }) =>
   hits.map((artItem) => <ArtItem key={artItem.id} art={artItem} />);
-const CustomHits = connectHits(ArtView);
+const CustomHits = connectHits(ArtView as any);
 
 const ArtPage = () => {
   return (

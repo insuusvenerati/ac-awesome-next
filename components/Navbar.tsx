@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { SyntheticEvent } from "react";
-import { connectMenu, connectSearchBox } from "react-instantsearch-dom";
-import { Dropdown, Input, Menu, StrictDropdownProps } from "semantic-ui-react";
+import { connectSearchBox } from "react-instantsearch-dom";
+import { Input, Menu } from "semantic-ui-react";
 
-const SearchBox = ({ currentRefinement, refine }) => (
+const SearchBox = ({ currentRefinement, refine }: any) => (
   <Input
     value={currentRefinement}
     onChange={(event) => refine(event.currentTarget.value)}
@@ -12,29 +11,6 @@ const SearchBox = ({ currentRefinement, refine }) => (
   />
 );
 
-const MenuSelect = ({ items, currentRefinement, refine }) => (
-  <>
-    <Dropdown
-      text="Gender"
-      // value={items.isRefined ? currentRefinement : items.value}
-      clearable
-      options={items.map((item) => {
-        const options = {
-          text: item.value,
-          value: item.value,
-        };
-        return options;
-      })}
-      search
-      selection
-      onChange={(event: SyntheticEvent<HTMLElement>, data: StrictDropdownProps) =>
-        refine(data.value)
-      }
-    />
-  </>
-);
-
-const CustomSelect = connectMenu(MenuSelect);
 const CustomSearch = connectSearchBox(SearchBox);
 
 export const CustomNavbar = () => {

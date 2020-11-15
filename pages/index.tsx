@@ -1,5 +1,4 @@
 import instantMeiliSearch from "@meilisearch/instant-meilisearch";
-import { GetStaticProps } from "next";
 import React from "react";
 import { connectHits, InstantSearch, RefinementList } from "react-instantsearch-dom";
 import { Card, Container, Grid } from "semantic-ui-react";
@@ -12,17 +11,11 @@ const searchClient = instantMeiliSearch(
   process.env.NEXT_PUBLIC_API_KEY
 );
 
-export const getStaticProps: GetStaticProps = async () => {
-  const villagers: VillagerType[] = require("../acnhapi/v1a/villagers.json");
-
-  return { props: { villagers } };
-};
-
 const HitsView = ({ hits }: { hits: VillagerType[] }) =>
   hits.map((hit) => <Villager key={hit.id} villager={hit} />);
-const CustomHits = connectHits(HitsView);
+const CustomHits = connectHits(HitsView as any);
 
-export default function Home({ villagers }: { villagers: VillagerType[] }) {
+export default function Home() {
   return (
     <>
       <InstantSearch indexName="villagers" searchClient={searchClient}>

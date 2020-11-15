@@ -1,8 +1,7 @@
-import { GetStaticPaths, GetStaticProps } from "next";
-import { Villager } from "../../types/villagers";
 import fetch from "isomorphic-unfetch";
-import { VillagerItem } from "../../components/Villager";
+import { GetStaticPaths, GetStaticProps } from "next";
 import { VillagerFullView } from "../../components/VillagerFullView";
+import { Villager } from "../../types/villagers";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const villagers: Villager[] = require("../../acnhapi/v1a/villagers.json");
