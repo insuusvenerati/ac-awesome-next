@@ -19,12 +19,9 @@ export const CustomNavbar = () => {
       <Menu.Item>
         <h1>Awesome AC</h1>
       </Menu.Item>
-      {/* <Menu.Item>
-        <CustomSelect attribute="gender" />
-      </Menu.Item> */}
-      {/* <Menu.Item>
-        <CustomSelect attribute="personality" />
-      </Menu.Item> */}
+      <Menu.Item>
+        <h4>Animal Crossing database with filters and search!</h4>
+      </Menu.Item>
       <Menu.Menu position="right">
         <Menu.Item>
           <CustomSearch />

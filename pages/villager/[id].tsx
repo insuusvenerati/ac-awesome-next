@@ -1,5 +1,6 @@
 import fetch from "isomorphic-unfetch";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 import { VillagerFullView } from "../../components/VillagerFullView";
 import { Villager } from "../../types/villagers";
 
@@ -20,6 +21,21 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export default function VillagerPage({ villager }: { villager: Villager }) {
   return (
     <>
+      <NextSeo
+        openGraph={{
+          title: villager.name["name-USen"],
+          description: villager["catch-phrase"],
+          images: [
+            {
+              url: villager.image_uri,
+              alt: villager.name["name-USen"],
+              height: 256,
+              width: 256,
+            },
+          ],
+        }}
+        title={`Awesome AC | ${villager.name["name-USen"]}`}
+      />
       <VillagerFullView villager={villager} />
     </>
   );

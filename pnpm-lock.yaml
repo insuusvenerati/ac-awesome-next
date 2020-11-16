@@ -4,6 +4,7 @@ dependencies:
   fuse.js: 6.4.3
   isomorphic-unfetch: 3.1.0
   next: 10.0.1_673d10ab695550cf3e856d21663dfc3f
+  next-seo: 4.17.0_5d26b2a5dc1975bc6aed87b373c4eccc
   react: 17.0.1
   react-dom: 17.0.1_react@17.0.1
   react-instantsearch-dom: 6.8.2_react-dom@17.0.1+react@17.0.1
@@ -3828,6 +3829,18 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
+  /next-seo/4.17.0_5d26b2a5dc1975bc6aed87b373c4eccc:
+    dependencies:
+      next: 10.0.1_673d10ab695550cf3e856d21663dfc3f
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
+    dev: false
+    peerDependencies:
+      next: ^8.1.1-canary.54 || ^9.0.0 || ^10.0.0
+      react: ^16.0.0 || ^17.0.0
+      react-dom: ^16.0.0 || ^17.0.0
+    resolution:
+      integrity: sha512-/hnb3oq7bhi8s7bup7+Lm6VzzgRucj+JrWtp+dJiYs/04H0N/NhmE9MpepixQ16fFj6G/39JLYxhzsO/QZG/Kw==
   /next-tick/1.0.0:
     dev: false
     resolution:
@@ -5696,6 +5709,7 @@ specifiers:
   fuse.js: ^6.4.3
   isomorphic-unfetch: ^3.1.0
   next: 10.0.1
+  next-seo: ^4.17.0
   react: 17.0.1
   react-dom: 17.0.1
   react-instantsearch-dom: ^6.8.2

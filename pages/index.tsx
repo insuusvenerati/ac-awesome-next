@@ -5,6 +5,7 @@ import { Card, Container, Grid } from "semantic-ui-react";
 import { CustomNavbar } from "../components/Navbar";
 import Villager from "../components/Villager";
 import { Villager as VillagerType } from "../types/villagers";
+import { NextSeo } from "next-seo";
 
 const searchClient = instantMeiliSearch(
   "https://search.stiforr.tech",
@@ -18,6 +19,7 @@ const CustomHits = connectHits(HitsView as any);
 export default function Home() {
   return (
     <>
+      <NextSeo title="Awesome AC | Villagers" />
       <InstantSearch indexName="villagers" searchClient={searchClient}>
         <CustomNavbar />
         <Container style={{ padding: 10 }} fluid>

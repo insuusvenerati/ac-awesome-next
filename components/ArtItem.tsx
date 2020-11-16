@@ -7,7 +7,7 @@ import { Art } from "../types/art";
 export const ArtItem = ({ art }: { art: Art }) => (
   <Link href={`/art/${art.id}`}>
     <Card style={{ backgroundColor: "#F0EAD6" }} raised href={`/art/${art.id}`}>
-      <Image width={256} height={256} layout="responsive" src={art.image_uri} />
+      <Image width={128} height={128} layout="responsive" src={art.image_uri} />
 
       <Card.Content>
         <Card.Header>{art.name["name-USen"].toUpperCase()}</Card.Header>

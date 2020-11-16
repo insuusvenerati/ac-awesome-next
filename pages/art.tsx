@@ -1,5 +1,5 @@
 import instantMeiliSearch from "@meilisearch/instant-meilisearch";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import React from "react";
 import { connectHits, InstantSearch } from "react-instantsearch-dom";
 import { Card, Container, Grid } from "semantic-ui-react";
@@ -19,15 +19,13 @@ const CustomHits = connectHits(ArtView as any);
 const ArtPage = () => {
   return (
     <>
-      <Head>
-        <title>Items</title>
-      </Head>
+      <NextSeo title="Awesome AC | Art" />
 
       <InstantSearch searchClient={searchClient} indexName="art">
         <CustomNavbar />
         <Container style={{ padding: 10 }} fluid>
           <Grid as="container">{/* <RefinementList /> */}</Grid>
-          <Card.Group itemsPerRow={5}>
+          <Card.Group itemsPerRow={6}>
             <CustomHits />
           </Card.Group>
         </Container>
