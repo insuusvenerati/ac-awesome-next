@@ -1858,12 +1858,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
-  /@babel/runtime/7.12.1:
-    dependencies:
-      regenerator-runtime: 0.13.7
-    dev: false
-    resolution:
-      integrity: sha512-J5AIf3vPj3UwXaAzb5j1xM4WAQDX3EMgemF8rjCP3SoW09LfRKAXQKt6CoVYl230P6iWdRcBbnLDDdnqWxZSCA==
   /@babel/runtime/7.12.5:
     dependencies:
       regenerator-runtime: 0.13.7
@@ -1940,7 +1934,7 @@ packages:
       integrity: sha512-jBD+G8+LWpMBBWvVcdr4QysjUE4mU/syrhN17o1u3gx0/WzJB1kwiVZAXRtWbsIPOwW8pF/YJV5+nmetPzepXg==
   /@fluentui/react-component-event-listener/0.51.2_react-dom@17.0.1+react@17.0.1:
     dependencies:
-      '@babel/runtime': 7.12.1
+      '@babel/runtime': 7.12.5
       react: 17.0.1
       react-dom: 17.0.1_react@17.0.1
     dev: false
@@ -1951,7 +1945,7 @@ packages:
       integrity: sha512-myfDuwU/MRGH5hqldLmwfMAn7FoXCCspdknWg+A0Tyf+mjUsgWlqRewLapon8mJqprZzrH1obPxONV/lVI3Quw==
   /@fluentui/react-component-ref/0.51.2_react-dom@17.0.1+react@17.0.1:
     dependencies:
-      '@babel/runtime': 7.12.1
+      '@babel/runtime': 7.12.5
       react: 17.0.1
       react-dom: 17.0.1_react@17.0.1
       react-is: 16.13.1
@@ -6007,7 +6001,7 @@ packages:
       integrity: sha512-Pkp0p9oWOxlH0kODx7qFpIRYpK1T4WJOO4lNnpNPOoWKCrYsfHqYSKgk5fHfQtnWnsAKy7nLJMW02bgDWWFZFg==
   /semantic-ui-react/2.0.1_react-dom@17.0.1+react@17.0.1:
     dependencies:
-      '@babel/runtime': 7.12.1
+      '@babel/runtime': 7.12.5
       '@fluentui/react-component-event-listener': 0.51.2_react-dom@17.0.1+react@17.0.1
       '@fluentui/react-component-ref': 0.51.2_react-dom@17.0.1+react@17.0.1
       '@popperjs/core': 2.5.4
@@ -7110,18 +7104,18 @@ packages:
     resolution:
       integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
 specifiers:
-  '@meilisearch/instant-meilisearch': ^0.2.4
-  '@types/node': ^14.14.7
-  '@types/react': ^16.9.56
-  '@types/react-instantsearch-dom': ^6.3.0
-  fuse.js: ^6.4.3
-  isomorphic-unfetch: ^3.1.0
+  '@meilisearch/instant-meilisearch': 0.2.4
+  '@types/node': 14.14.7
+  '@types/react': 16.9.56
+  '@types/react-instantsearch-dom': 6.3.0
+  fuse.js: 6.4.3
+  isomorphic-unfetch: 3.1.0
   next: 10.0.1
-  next-offline: ^5.0.3
-  next-seo: ^4.17.0
+  next-offline: 5.0.3
+  next-seo: 4.17.0
   react: 17.0.1
   react-dom: 17.0.1
-  react-instantsearch-dom: ^6.8.2
-  semantic-ui-css: ^2.4.1
-  semantic-ui-react: ^2.0.1
-  typescript: ^4.0.5
+  react-instantsearch-dom: 6.8.2
+  semantic-ui-css: 2.4.1
+  semantic-ui-react: 2.0.1
+  typescript: 4.0.5
