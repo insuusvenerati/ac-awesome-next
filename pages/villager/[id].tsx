@@ -24,7 +24,9 @@ export default function VillagerPage({ villager }: { villager: Villager }) {
       <NextSeo
         openGraph={{
           title: villager.name["name-USen"],
-          description: villager["catch-phrase"],
+          description: villager.saying,
+          url: `https://ac-awesome-next.vercel.app/villager/${villager.id}`,
+          type: "profile",
           images: [
             {
               url: villager.image_uri,
