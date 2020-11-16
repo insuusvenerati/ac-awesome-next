@@ -1,6 +1,6 @@
 import fetch from "isomorphic-unfetch";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { NextSeo } from "next-seo";
+import { NextSeo, SocialProfileJsonLd } from "next-seo";
 import { VillagerFullView } from "../../components/VillagerFullView";
 import { Villager } from "../../types/villagers";
 
@@ -37,6 +37,12 @@ export default function VillagerPage({ villager }: { villager: Villager }) {
           ],
         }}
         title={`Awesome AC | ${villager.name["name-USen"]}`}
+      />
+      <SocialProfileJsonLd
+        type="Person"
+        name={villager.name["name-USen"]}
+        url={`https://ac-awesome-next.vercel.app/villager/${villager.id}`}
+        sameAs={[`https://animalcrossing.fandom.com/wiki/${villager.name["name-USen"]}`]}
       />
       <VillagerFullView villager={villager} />
     </>

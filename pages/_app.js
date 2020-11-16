@@ -21,12 +21,6 @@ function MyApp({ Component, pageProps }) {
               height: 600,
               alt: "Animal Crossing Logo",
             },
-            {
-              url: "https://i.imgur.com/HFsavvk.jpeg",
-              width: 800,
-              height: 600,
-              alt: "Animal Crossing Logo 2",
-            },
           ],
         }}
       />
