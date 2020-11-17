@@ -1,11 +1,5 @@
 const withOffline = require("next-offline");
 
-const nextConfig = {
-  images: {
-    domains: ["acnhapi.com"],
-  },
-};
-
 const swConfig = {
   images: {
     domains: ["acnhapi.com"],
