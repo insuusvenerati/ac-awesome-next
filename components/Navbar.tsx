@@ -1,6 +1,37 @@
 import Link from "next/link";
 import { connectSearchBox } from "react-instantsearch-dom";
-import { Input, Menu } from "semantic-ui-react";
+import { Dropdown, Input, Menu } from "semantic-ui-react";
+
+const items = [
+  {
+    name: "Villagers",
+    url: "/",
+  },
+  {
+    name: "Art",
+    url: "/art",
+  },
+  {
+    name: "Music",
+    url: "/music",
+  },
+  {
+    name: "Sea",
+    url: "/sea",
+  },
+  {
+    name: "Fossils",
+    url: "/fossils",
+  },
+  {
+    name: "Fish",
+    url: "/fish",
+  },
+  {
+    name: "Bugs",
+    url: "/bugs",
+  },
+];
 
 const SearchBox = ({ currentRefinement, refine }: any) => (
   <Input
@@ -17,7 +48,11 @@ export const CustomNavbar = () => {
   return (
     <Menu>
       <Menu.Item>
-        <h1>Awesome AC</h1>
+        <Link href="/">
+          <a style={{ color: "black" }}>
+            <h1>Awesome AC</h1>
+          </a>
+        </Link>
       </Menu.Item>
       <Menu.Item>
         <h4>Animal Crossing database with filters and search!</h4>
@@ -27,14 +62,17 @@ export const CustomNavbar = () => {
           <CustomSearch />
         </Menu.Item>
         <Menu.Item>
-          <Link href="/">
-            <a>Villagers</a>
-          </Link>
-        </Menu.Item>
-        <Menu.Item>
-          <Link href="/art">
-            <a>Art</a>
-          </Link>
+          <Dropdown pointing text="Where to?">
+            <Dropdown.Menu>
+              {items.map((item) => (
+                <Link key={item.name} href={item.url}>
+                  <Dropdown.Item>
+                    <a>{item.name}</a>
+                  </Dropdown.Item>
+                </Link>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
         </Menu.Item>
       </Menu.Menu>
     </Menu>
