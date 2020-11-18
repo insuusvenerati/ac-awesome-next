@@ -36,7 +36,7 @@ export default function FishPage() {
     <>
       <InstantSearch indexName="fish" searchClient={searchClient}>
         <CustomNavbar />
-        <CustomFilterList attribute="shadow" />
+        {/* <CustomFilterList attribute="shadow" /> */}
         <Container style={{ padding: 10 }} fluid>
           <Card.Group style={{ marginTop: 10 }} itemsPerRow={5}>
             <CustomHits />

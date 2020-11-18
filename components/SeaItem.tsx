@@ -34,12 +34,12 @@ const SeaItem = ({ sea }: { sea: Sea }) => (
             </List.Content>
           </List.Item>
 
-          <List.Item>
+          {/* <List.Item>
             <div style={{ display: "flex" }}>
               <div style={{ width: 20, height: 20, backgroundColor: `${sea["bubble-color"]}` }} />
               <div style={{ width: 20, height: 20, backgroundColor: `${sea["text-color"]}` }} />
             </div>
-          </List.Item>
+          </List.Item> */}
         </List>
       </Card.Content>
     </Card>

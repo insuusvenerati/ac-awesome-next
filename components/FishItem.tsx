@@ -22,9 +22,9 @@ const FishItem = ({ fish }: { fish: Fish }) => (
           </List.Item>
 
           <List.Item>
-            <List.Content style={{ color: "black" }}>
+            {/* <List.Content style={{ color: "black" }}>
               <h4>Speed</h4> {fish.speed}
-            </List.Content>
+            </List.Content> */}
           </List.Item>
 
           <List.Item>
@@ -34,12 +34,12 @@ const FishItem = ({ fish }: { fish: Fish }) => (
             </List.Content>
           </List.Item>
 
-          <List.Item>
+          {/* <List.Item>
             <div style={{ display: "flex" }}>
               <div style={{ width: 20, height: 20, backgroundColor: `${fish["bubble-color"]}` }} />
               <div style={{ width: 20, height: 20, backgroundColor: `${fish["text-color"]}` }} />
             </div>
-          </List.Item>
+          </List.Item> */}
         </List>
       </Card.Content>
     </Card>
