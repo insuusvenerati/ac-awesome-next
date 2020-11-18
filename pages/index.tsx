@@ -1,4 +1,3 @@
-import instantMeiliSearch from "@meilisearch/instant-meilisearch";
 import { NextSeo } from "next-seo";
 import { useState } from "react";
 import { Hit, MenuProvided } from "react-instantsearch-core";
@@ -8,7 +7,6 @@ import {
   Card,
   Checkbox,
   Container,
-  Dropdown,
   Grid,
   Icon,
   List,
@@ -17,18 +15,14 @@ import {
 } from "semantic-ui-react";
 import { CustomNavbar } from "../components/Navbar";
 import Villager from "../components/Villager";
+import { searchClient } from "../searchClient";
 import { Villager as VillagerType } from "../types/villagers";
-
-const searchClient = instantMeiliSearch(
-  "https://search.stiforr.tech",
-  process.env.NEXT_PUBLIC_API_KEY
-);
 
 const FilterList = ({ items, currentRefinement, refine }: MenuProvided) => {
   return (
     <List>
       {items.map((item) => (
-        <List.Item>
+        <List.Item key={item.value}>
           <Checkbox
             value={item.isRefined ? currentRefinement : ""}
             onChange={() => {
