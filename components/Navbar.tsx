@@ -31,6 +31,10 @@ const items = [
     name: "Bugs",
     url: "/bugs",
   },
+  {
+    name: "Items",
+    url: "/items",
+  },
 ];
 
 const SearchBox = ({ currentRefinement, refine }: any) => (
@@ -44,7 +48,7 @@ const SearchBox = ({ currentRefinement, refine }: any) => (
 
 const CustomSearch = connectSearchBox(SearchBox);
 
-export const CustomNavbar = () => {
+export const CustomNavbar = ({ hasSearch = true }) => {
   return (
     <Menu>
       <Menu.Item>
@@ -58,9 +62,11 @@ export const CustomNavbar = () => {
         <h4>Animal Crossing database with filters and search!</h4>
       </Menu.Item>
       <Menu.Menu position="right">
-        <Menu.Item>
-          <CustomSearch />
-        </Menu.Item>
+        {hasSearch && (
+          <Menu.Item>
+            <CustomSearch />
+          </Menu.Item>
+        )}
         <Menu.Item>
           <Dropdown pointing text="Where to?">
             <Dropdown.Menu>

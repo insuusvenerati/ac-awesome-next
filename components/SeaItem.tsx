@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { memo } from "react";
 import { Card, List } from "semantic-ui-react";
-import { toUpperCase } from "../toUpperCase";
+import { numMonths, toUpperCase } from "../utility";
 import { Sea } from "../types/sea";
 
 const SeaItem = ({ sea }: { sea: Sea }) => (
@@ -34,12 +34,12 @@ const SeaItem = ({ sea }: { sea: Sea }) => (
             </List.Content>
           </List.Item>
 
-          {/* <List.Item>
-            <div style={{ display: "flex" }}>
-              <div style={{ width: 20, height: 20, backgroundColor: `${sea["bubble-color"]}` }} />
-              <div style={{ width: 20, height: 20, backgroundColor: `${sea["text-color"]}` }} />
-            </div>
-          </List.Item> */}
+          <List.Item>
+            <List.Header>Availability</List.Header>
+            <List.Content>
+              {sea.availability["month-array-northern"].map((month) => `${numMonths[month]} `)}
+            </List.Content>
+          </List.Item>
         </List>
       </Card.Content>
     </Card>

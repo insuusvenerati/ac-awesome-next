@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Card } from "semantic-ui-react";
-import { toUpperCase } from "../toUpperCase";
+import { toUpperCase } from "../utility";
 import { Art } from "../types/art";
 
 export const ArtItem = ({ art }: { art: Art }) => (

@@ -2,7 +2,7 @@ import fetch from "isomorphic-unfetch";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { NextSeo, SocialProfileJsonLd } from "next-seo";
 import { VillagerFullView } from "../../components/VillagerFullView";
-import { Villager } from "../../types/villagers";
+import { Villager, VillagerExtra } from "../../types/villagers";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const villagers: Villager[] = require("../../acnhapi/v1a/villagers.json");
@@ -14,11 +14,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const response = await fetch(`https://acnhapi.com/v1a/villagers/${params?.id}`);
-  const villager = await response.json();
-  return { props: { villager } };
+  const villager: Villager = await response.json();
+  const villagerExtraResponse = await fetch(
+    `http://localhost:1337/villagers/filter/?name=${villager.name["name-USen"]}`
+  );
+  const villagerExtra = await villagerExtraResponse.json();
+  return { props: { villager, villagerExtra } };
 };
 
-export default function VillagerPage({ villager }: { villager: Villager }) {
+export default function VillagerPage({
+  villager,
+  villagerExtra,
+}: {
+  villager: Villager;
+  villagerExtra: VillagerExtra[];
+}) {
   return (
     <>
       <NextSeo
@@ -34,6 +44,12 @@ export default function VillagerPage({ villager }: { villager: Villager }) {
               height: 256,
               width: 256,
             },
+            {
+              url: villagerExtra[0].photoImage,
+              alt: villager.name["name-USen"],
+              height: 256,
+              width: 256,
+            },
           ],
         }}
         title={`Awesome AC | ${villager.name["name-USen"]}`}
@@ -44,7 +60,7 @@ export default function VillagerPage({ villager }: { villager: Villager }) {
         url={`https://ac-awesome-next.vercel.app/villager/${villager.id}`}
         sameAs={[`https://animalcrossing.fandom.com/wiki/${villager.name["name-USen"]}`]}
       />
-      <VillagerFullView villager={villager} />
+      <VillagerFullView villager={villager} villagerExtra={villagerExtra[0]} />
     </>
   );
 }

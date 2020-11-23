@@ -38,7 +38,7 @@ export default function FishPage() {
         <CustomNavbar />
         {/* <CustomFilterList attribute="shadow" /> */}
         <Container style={{ padding: 10 }} fluid>
-          <Card.Group style={{ marginTop: 10 }} itemsPerRow={5}>
+          <Card.Group style={{ marginTop: 10 }} itemsPerRow={2}>
             <CustomHits />
           </Card.Group>
         </Container>

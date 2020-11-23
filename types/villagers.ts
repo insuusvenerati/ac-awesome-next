@@ -94,3 +94,33 @@ export interface Villager {
     "catch-EUru": string;
   };
 }
+
+export interface VillagerExtra {
+  _id: string;
+  sourceSheet: string;
+  name: string;
+  iconImage: string;
+  photoImage: string;
+  houseImage: string;
+  species: string;
+  gender: string;
+  personality: string;
+  subtype: string;
+  hobby: string;
+  birthday: string;
+  catchphrase: string;
+  favoriteSong: string;
+  favoriteSaying: string;
+  defaultClothing: number;
+  defaultUmbrella: string;
+  wallpaper: string;
+  flooring: string;
+  furnitureList: string;
+  furnitureNameList: string;
+  nameColor: string;
+  bubbleColor: string;
+  filename: string;
+  uniqueEntryId: string;
+  colors: Array<string>;
+  styles: Array<string>;
+}
