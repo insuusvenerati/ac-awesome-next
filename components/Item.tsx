@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { memo } from "react";
-import { Card, Label, List } from "semantic-ui-react";
+import { Card, List } from "semantic-ui-react";
 import { Item as ItemType } from "../types/item";
 
-const Item = ({ item }: { item: ItemType }) => (
+export const Item = ({ item }: { item: ItemType }) => (
   <Link href={`/item/${item._id}`}>
     <Card style={{ backgroundColor: "#F0EAD6" }} raised href={`/item/${item._id}`}>
       <Image width={256} height={256} layout="responsive" src={item.variants[0].image} />
@@ -28,13 +27,6 @@ const Item = ({ item }: { item: ItemType }) => (
           </List.Item>
         </List>
       </Card.Content>
-      <Card.Content extra>
-        {/* <Label color="blue">{item.species}</Label>
-        <Label color="green">{item.gender}</Label>
-        <Label color="red">{item.personality}</Label> */}
-      </Card.Content>
     </Card>
   </Link>
 );
-
-export default memo(Item);

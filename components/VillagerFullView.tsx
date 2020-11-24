@@ -20,7 +20,7 @@ export const VillagerFullView = ({
       const furnitureListArray = villagerExtra.furnitureList.split(";");
       const results: Array<Array<Item>> = await Promise.all(
         furnitureListArray.map((item) =>
-          fetch(`http://localhost:1337/items/${item}`).then((response) => response.json())
+          fetch(`${process.env.NEXT_PUBLIC_API_URI}/${item}`).then((response) => response.json())
         )
       );
       setFurnitureItem(results);

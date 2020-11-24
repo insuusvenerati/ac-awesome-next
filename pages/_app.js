@@ -1,7 +1,7 @@
+import { NextSeo } from "next-seo";
+import Head from "next/head";
 import "semantic-ui-css/semantic.min.css";
 import "../index.scss";
-import Head from "next/head";
-import { NextSeo } from "next-seo";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -41,6 +41,7 @@ function MyApp({ Component, pageProps }) {
           ],
         }}
       />
+
       <Component {...pageProps} />
     </>
   );

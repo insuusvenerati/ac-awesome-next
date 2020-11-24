@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const response = await fetch(`https://acnhapi.com/v1a/villagers/${params?.id}`);
   const villager: Villager = await response.json();
   const villagerExtraResponse = await fetch(
-    `http://localhost:1337/villagers/filter/?name=${villager.name["name-USen"]}`
+    `${process.env.NEXT_PUBLIC_API_URI}/villagers/filter/?name=${villager.name["name-USen"]}`
   );
   const villagerExtra = await villagerExtraResponse.json();
   return { props: { villager, villagerExtra } };

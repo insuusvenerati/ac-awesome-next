@@ -3,7 +3,7 @@ export const toUpperCase = (word: string) => {
   return word.charAt(0).toUpperCase() + word.slice(1);
 };
 
-export const numMonths = {
+export const numMonths: any = {
   1: "Jan",
   2: "Feb",
   3: "March",
