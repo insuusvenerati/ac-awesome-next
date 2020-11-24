@@ -1,5 +1,6 @@
 export interface Item {
   _id: string;
+  id: string;
   sourceSheet: string;
   name: string;
   patternTitle: any;
