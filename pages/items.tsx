@@ -1,7 +1,6 @@
 import { NextSeo } from "next-seo";
-import React from "react";
-import { connectHits, Hit } from "react-instantsearch-core";
-import { InstantSearch } from "react-instantsearch-dom";
+import { connectHits, Hit, Index, InstantSearch } from "react-instantsearch-core";
+import { Hits } from "react-instantsearch-dom";
 import { Card, Container } from "semantic-ui-react";
 import { Item } from "../components/Item";
 import { CustomNavbar } from "../components/Navbar";
@@ -10,6 +9,13 @@ import { Item as ItemType } from "../types/item";
 
 const CustomHitsView = ({ hits }: { hits: Hit<ItemType>[] }) =>
   hits.map((hit) => <Item key={hit._id} item={hit} />);
+
+const TestHits = ({ hits }: { hits: Hit<ItemType>[] }) => (
+  <>
+    {console.log(hits)}
+    {/* {hits[0].name} */}
+  </>
+);
 
 const CustomHitsItems = connectHits(CustomHitsView as any);
 

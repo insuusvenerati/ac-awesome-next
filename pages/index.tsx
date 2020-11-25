@@ -1,7 +1,7 @@
 import { NextSeo } from "next-seo";
 import { useState } from "react";
-import { Hit, MenuProvided } from "react-instantsearch-core";
-import { connectHits, connectRefinementList, InstantSearch } from "react-instantsearch-dom";
+import { Hit, Index, MenuProvided } from "react-instantsearch-core";
+import { connectHits, connectRefinementList } from "react-instantsearch-dom";
 import {
   Button,
   Card,
@@ -15,7 +15,6 @@ import {
 } from "semantic-ui-react";
 import { CustomNavbar } from "../components/Navbar";
 import Villager from "../components/Villager";
-import { searchClient } from "../searchClient";
 import { Villager as VillagerType } from "../types/villagers";
 
 const FilterList = ({ items, currentRefinement, refine }: MenuProvided) => {
@@ -48,44 +47,43 @@ export default function Home() {
   return (
     <>
       <NextSeo title="Awesome AC | Villagers" />
-      <InstantSearch indexName="villagers" searchClient={searchClient}>
-        <CustomNavbar />
-        <Container style={{ padding: 10 }} fluid>
-          <Button style={{ marginBottom: 10 }} onClick={() => setVisible(!visible)}>
-            <Icon name="filter" />
-            Filter
-          </Button>
-          <Sidebar.Pushable>
-            <Sidebar animation="push" direction="top" visible={visible}>
-              <Segment>
-                <Grid columns={4} stackable>
-                  <Grid.Column>
-                    <CustomFilterList attribute="gender" />
-                  </Grid.Column>
 
-                  <Grid.Column>
-                    <CustomFilterList attribute="personality" />
-                  </Grid.Column>
+      <CustomNavbar />
+      <Container style={{ padding: 10 }} fluid>
+        <Button style={{ marginBottom: 10 }} onClick={() => setVisible(!visible)}>
+          <Icon name="filter" />
+          Filter
+        </Button>
+        <Sidebar.Pushable>
+          <Sidebar animation="push" direction="top" visible={visible}>
+            <Segment>
+              <Grid columns={4} stackable>
+                <Grid.Column>
+                  <CustomFilterList attribute="gender" />
+                </Grid.Column>
 
-                  <Grid.Column>
-                    <CustomFilterList attribute="species" />
-                  </Grid.Column>
+                <Grid.Column>
+                  <CustomFilterList attribute="personality" />
+                </Grid.Column>
 
-                  <Grid.Column>
-                    <CustomFilterList attribute="hobby" />
-                  </Grid.Column>
-                </Grid>
-              </Segment>
-            </Sidebar>
+                <Grid.Column>
+                  <CustomFilterList attribute="species" />
+                </Grid.Column>
 
-            <Sidebar.Pusher>
-              <Card.Group stackable style={{ marginTop: 10 }} itemsPerRow={5}>
-                <CustomHits />
-              </Card.Group>
-            </Sidebar.Pusher>
-          </Sidebar.Pushable>
-        </Container>
-      </InstantSearch>
+                <Grid.Column>
+                  <CustomFilterList attribute="hobby" />
+                </Grid.Column>
+              </Grid>
+            </Segment>
+          </Sidebar>
+
+          <Sidebar.Pusher>
+            <Card.Group stackable style={{ marginTop: 10 }} itemsPerRow={5}>
+              <CustomHits />
+            </Card.Group>
+          </Sidebar.Pusher>
+        </Sidebar.Pushable>
+      </Container>
     </>
   );
 }

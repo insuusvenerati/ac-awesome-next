@@ -1,14 +1,16 @@
 import { NextSeo } from "next-seo";
 import Head from "next/head";
+import { InstantSearch } from "react-instantsearch-dom";
+import { searchClient } from "../searchClient";
 import "semantic-ui-css/semantic.min.css";
 import "../index.scss";
+import { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
         <link rel="prefetch" href="https://acnhapi.com" />
-        <link rel="prefetch" href="https://acnhapi.b-cdn.net" />
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
@@ -42,8 +44,9 @@ function MyApp({ Component, pageProps }) {
           ],
         }}
       />
-
-      <Component {...pageProps} />
+      <InstantSearch searchClient={searchClient} indexName="villagers">
+        <Component {...pageProps} />
+      </InstantSearch>
     </>
   );
 }

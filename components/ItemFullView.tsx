@@ -55,10 +55,7 @@ export const ItemFullView = ({ item }: { item: Item }) => {
                     <List.Header content="Size" />
                     <List.Content content={item.size} />
                   </List.Item>
-                  <List.Item>
-                    <List.Header content="Subtype" />
-                    <List.Content content={item.subtype} />
-                  </List.Item>
+
                   {/* <List.Item>
                     <List.Header content="Favorite Song" />
                     <List.Content content={itemExtra.favoriteSong} />

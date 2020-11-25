@@ -1,5 +1,5 @@
-import { connectRefinementList, Hit, MenuProvided } from "react-instantsearch-core";
-import { connectHits, InstantSearch } from "react-instantsearch-dom";
+import { connectRefinementList, Hit, InstantSearch, MenuProvided } from "react-instantsearch-core";
+import { connectHits } from "react-instantsearch-dom";
 import { Card, Checkbox, Container, List } from "semantic-ui-react";
 import FishItem from "../components/FishItem";
 import { CustomNavbar } from "../components/Navbar";
@@ -34,7 +34,7 @@ const CustomHits = connectHits(HitsView as any);
 export default function FishPage() {
   return (
     <>
-      <InstantSearch indexName="fish" searchClient={searchClient}>
+      <InstantSearch searchClient={searchClient} indexName="fish">
         <CustomNavbar />
         {/* <CustomFilterList attribute="shadow" /> */}
         <Container style={{ padding: 10 }} fluid>

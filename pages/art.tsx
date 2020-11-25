@@ -1,17 +1,18 @@
 import instantMeiliSearch from "@meilisearch/instant-meilisearch";
 import { NextSeo } from "next-seo";
 import React from "react";
-import { connectHits, InstantSearch, RefinementList } from "react-instantsearch-dom";
+import {
+  connectRefinementList,
+  Index,
+  InstantSearch,
+  MenuProvided,
+} from "react-instantsearch-core";
+import { connectHits } from "react-instantsearch-dom";
 import { Card, Checkbox, Container, Grid, List } from "semantic-ui-react";
 import { ArtItem } from "../components/ArtItem";
 import { CustomNavbar } from "../components/Navbar";
+import { searchClient } from "../searchClient";
 import { Art } from "../types/art";
-import { connectRefinementList, MenuProvided } from "react-instantsearch-core";
-
-const searchClient = instantMeiliSearch(
-  "https://search.stiforr.tech",
-  process.env.NEXT_PUBLIC_API_KEY
-);
 
 const FilterList = ({ items, currentRefinement, refine }: MenuProvided) => {
   return (
