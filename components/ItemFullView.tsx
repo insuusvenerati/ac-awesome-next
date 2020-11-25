@@ -75,7 +75,7 @@ export const ItemFullView = ({ item }: { item: Item }) => {
                       content={furnitureItem.map(([item]) => `${toUpperCase(item.name)} `)}
                     />
                   </List.Item> */}
-                  <List.Item>
+                  {/* <List.Item>
                     <List.Header content="Colors" />
                     <div style={{ display: "flex" }}>
                       <div
@@ -93,12 +93,12 @@ export const ItemFullView = ({ item }: { item: Item }) => {
                         }}
                       />
                     </div>
-                  </List.Item>
-                  <Card.Content extra>
+                  </List.Item> */}
+                  {/* <Card.Content extra>
                     <Label color="blue">{item.species}</Label>
                     <Label color="green">{item.gender}</Label>
                     <Label color="red">{item.personality}</Label>
-                  </Card.Content>
+                  </Card.Content> */}
                 </List>
               </Card.Content>
             </Card>
@@ -117,7 +117,7 @@ export const ItemFullView = ({ item }: { item: Item }) => {
               <Card.Content>
                 <Card.Header>Links and More Information</Card.Header>
                 <List>
-                  <List.Item>
+                  {/* <List.Item>
                     <List.Header>
                       <a
                         target="blank"
@@ -126,7 +126,7 @@ export const ItemFullView = ({ item }: { item: Item }) => {
                         Nookipedia
                       </a>
                     </List.Header>
-                  </List.Item>
+                  </List.Item> */}
                 </List>
               </Card.Content>
             </Card>
