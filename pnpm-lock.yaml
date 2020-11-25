@@ -13,7 +13,7 @@ dependencies:
   semantic-ui-react: 2.0.1_react-dom@17.0.1+react@17.0.1
 devDependencies:
   '@types/node': 14.14.7
-  '@types/react': 16.9.56
+  '@types/react': 16.14.2
   typescript: 4.0.5
 lockfileVersion: 5.2
 packages:
@@ -1230,10 +1230,18 @@ packages:
     dev: false
     resolution:
       integrity: sha512-sq4WXWSVVhH8NV7s6xcc/c+SkiyMewRefCPleXK3p9676rIFyKwotRkh8x7IoXOBV3V2avfU3Xr65Y9scRZlZQ==
+  /@types/react/16.14.2:
+    dependencies:
+      '@types/prop-types': 15.7.3
+      csstype: 3.0.4
+    dev: true
+    resolution:
+      integrity: sha512-BzzcAlyDxXl2nANlabtT4thtvbbnhee8hMmH/CcJrISDBVcJS1iOsP1f0OAgSdGE0MsY9tqcrb9YoZcOFv9dbQ==
   /@types/react/16.9.56:
     dependencies:
       '@types/prop-types': 15.7.3
       csstype: 3.0.4
+    dev: false
     resolution:
       integrity: sha512-gIkl4J44G/qxbuC6r2Xh+D3CGZpJ+NdWTItAPmZbR5mUS+JQ8Zvzpl0ea5qT/ZT3ZNTUcDKUVqV3xBE8wv/DyQ==
   /@types/resolve/0.0.8:
@@ -6040,7 +6048,7 @@ packages:
 specifiers:
   '@meilisearch/instant-meilisearch': 0.2.4
   '@types/node': 14.14.7
-  '@types/react': 16.9.56
+  '@types/react': 16.14.2
   '@types/react-instantsearch-dom': 6.3.0
   isomorphic-unfetch: 3.1.0
   next: 10.0.3
