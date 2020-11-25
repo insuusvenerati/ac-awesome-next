@@ -58,7 +58,7 @@ export default function Home() {
           <Sidebar.Pushable>
             <Sidebar animation="push" direction="top" visible={visible}>
               <Segment>
-                <Grid as="container">
+                <Grid columns={4} stackable>
                   <Grid.Column>
                     <CustomFilterList attribute="gender" />
                   </Grid.Column>
@@ -77,8 +77,9 @@ export default function Home() {
                 </Grid>
               </Segment>
             </Sidebar>
+
             <Sidebar.Pusher>
-              <Card.Group style={{ marginTop: 10 }} itemsPerRow={5}>
+              <Card.Group stackable style={{ marginTop: 10 }} itemsPerRow={5}>
                 <CustomHits />
               </Card.Group>
             </Sidebar.Pusher>

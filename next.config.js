@@ -2,7 +2,7 @@ const withOffline = require("next-offline");
 
 const swConfig = {
   images: {
-    domains: ["acnhapi.com", "acnhcdn.com"],
+    domains: ["acnhapi.com", "acnhcdn.com", "acnhapi.b-cdn.net"],
   },
   target: "serverless",
   transformManifest: (manifest) => ["/"].concat(manifest), // add the homepage to the cache

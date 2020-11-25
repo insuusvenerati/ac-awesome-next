@@ -13,7 +13,7 @@ export const ItemFullView = ({ item }: { item: Item }) => {
           <Grid.Column>
             <Card>
               <Card.Content>
-                <Card.Header>{item.name["name-USen"]}</Card.Header>
+                <Card.Header>{item.name}</Card.Header>
               </Card.Content>
               {/* <Image layout="responsive" width={256} height={256} src={item.image_uri} /> */}
             </Card>
@@ -28,32 +28,32 @@ export const ItemFullView = ({ item }: { item: Item }) => {
                     <List.Content content={item.id} />
                   </List.Item>
                   <List.Item>
-                    <List.Header content="Birthday" />
-                    <List.Content content={item.birthday} />
+                    <List.Header content="Tag" />
+                    <List.Content content={item.tag} />
                   </List.Item>
                   <List.Item>
-                    <List.Header content="Catch Phrase" />
-                    <List.Content content={item["catch-phrase"]} />
+                    <List.Header content="Catalog" />
+                    <List.Content content={item.catalog} />
                   </List.Item>
                   <List.Item>
-                    <List.Header content="Gender" />
-                    <List.Content content={item.gender} />
+                    <List.Header content="Outdoor" />
+                    <List.Content content={item.outdoor} />
                   </List.Item>
                   <List.Item>
-                    <List.Header content="Hobby" />
-                    <List.Content content={item.hobby} />
+                    <List.Header content="Customization Kit Cost" />
+                    <List.Content content={item.customizationKitCost} />
                   </List.Item>
                   <List.Item>
-                    <List.Header content="Personality" />
-                    <List.Content content={item.personality} />
+                    <List.Header content="Exchange Price" />
+                    <List.Content content={item.exchangePrice} />
                   </List.Item>
                   <List.Item>
-                    <List.Header content="Saying" />
-                    <List.Content content={item.saying} />
+                    <List.Header content="Exchange Currency" />
+                    <List.Content content={item.exchangeCurrency} />
                   </List.Item>
                   <List.Item>
-                    <List.Header content="Species" />
-                    <List.Content content={item.species} />
+                    <List.Header content="Size" />
+                    <List.Content content={item.size} />
                   </List.Item>
                   <List.Item>
                     <List.Header content="Subtype" />

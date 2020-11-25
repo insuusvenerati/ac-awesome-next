@@ -50,24 +50,25 @@ const CustomSearch = connectSearchBox(SearchBox);
 
 export const CustomNavbar = ({ hasSearch = true }) => {
   return (
-    <Menu>
-      <Menu.Item>
-        <Link href="/">
-          <a style={{ color: "black" }}>
-            <h1>Awesome AC</h1>
-          </a>
-        </Link>
-      </Menu.Item>
-      <Menu.Item>
-        <h4>Animal Crossing database with filters and search!</h4>
-      </Menu.Item>
-      <Menu.Menu position="right">
+    <>
+      <Menu stackable>
+        <Menu.Item>
+          <Link href="/">
+            <a style={{ color: "black" }}>
+              <h1>Awesome AC</h1>
+            </a>
+          </Link>
+        </Menu.Item>
+        <Menu.Item>
+          <h4>Animal Crossing database with filters and search!</h4>
+        </Menu.Item>
+
         {hasSearch && (
           <Menu.Item>
             <CustomSearch />
           </Menu.Item>
         )}
-        <Menu.Item>
+        <Menu.Item position="right">
           <Dropdown pointing text="Where to?">
             <Dropdown.Menu>
               {items.map((item) => (
@@ -80,7 +81,7 @@ export const CustomNavbar = ({ hasSearch = true }) => {
             </Dropdown.Menu>
           </Dropdown>
         </Menu.Item>
-      </Menu.Menu>
-    </Menu>
+      </Menu>
+    </>
   );
 };
