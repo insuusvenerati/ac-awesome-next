@@ -1,6 +1,6 @@
 dependencies:
   '@meilisearch/instant-meilisearch': 0.2.4
-  '@types/react-instantsearch-dom': 6.8.0
+  '@types/react-instantsearch-dom': 6.10.0
   isomorphic-unfetch: 3.1.0
   next: 10.0.3_e87f6653ca6c482a789327ecd53bd631
   next-offline: 5.0.3_next@10.0.3
@@ -1228,13 +1228,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-EL1lfL0sT9MKOmX4SvqziQTzWQ1J3xiNsLV6KNawCODrKWS2lLm2J1sxrrXahkis6cSEQpbLmiaemqNhB7g3Fw==
-  /@types/react-instantsearch-dom/6.8.0:
+  /@types/react-instantsearch-dom/6.10.0:
     dependencies:
       '@types/react': 17.0.0
       '@types/react-instantsearch-core': 6.3.1
     dev: false
     resolution:
-      integrity: sha512-lFZTk+bGHZFRHP5digHSO0djmm38yPUAYJNz8Lc6HyQ2G/aPtQ/5B0I+r1NvvKMma/hDxtx0pkYINjfE5/5RzA==
+      integrity: sha512-C9djgcxuRmHKPYuuv83vikLtpH033eQEZ/u8blyoaDrfszaDsJnBfstXDYV+8tfkLFNS5z/YDWr+bl5MocBIMA==
   /@types/react/17.0.0:
     dependencies:
       '@types/prop-types': 15.7.3
@@ -2211,7 +2211,7 @@ packages:
     resolution:
       integrity: sha512-V8yBI3+ZLDVomoWICO6kq/CD28Y4r1M7CWeO4AGpMdMfseu8bkSubBmUPySMGKRTS+su4XQ07zUkAsiu9FCWTg==
   /core-js/2.6.11:
-    deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
+    deprecated: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
     dev: false
     requiresBuild: true
     resolution:
@@ -4756,7 +4756,7 @@ packages:
     resolution:
       integrity: sha512-QEb4A76c8Mi7I3xNKXlRKQSlLBwjUV/ULFMP+G7n3/7tJZ8MG5wsZ3ucxP1Jz8Vevn6fnJsxDx9cIls+utGzPQ==
   /resolve-url/0.2.1:
-    deprecated: 'https://github.com/lydell/resolve-url#deprecated'
+    deprecated: https://github.com/lydell/resolve-url#deprecated
     dev: false
     resolution:
       integrity: sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
@@ -5707,7 +5707,7 @@ packages:
     resolution:
       integrity: sha512-B0yRTzYdUCCn9n+F4+Gh4yIDtMQcaJsmYBDsTSG8g/OejKBodLQ2IHfN3bM7jUsRXndopT7OIXWdYqc1fjmV6g==
   /urix/0.1.0:
-    deprecated: 'Please see https://github.com/lydell/urix#deprecated'
+    deprecated: Please see https://github.com/lydell/urix#deprecated
     dev: false
     resolution:
       integrity: sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
@@ -6046,7 +6046,7 @@ specifiers:
   '@meilisearch/instant-meilisearch': 0.2.4
   '@types/node': 14.14.10
   '@types/react': 17.0.0
-  '@types/react-instantsearch-dom': 6.8.0
+  '@types/react-instantsearch-dom': 6.10.0
   isomorphic-unfetch: 3.1.0
   next: 10.0.3
   next-offline: 5.0.3
