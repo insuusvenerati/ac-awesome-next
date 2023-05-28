@@ -2,18 +2,18 @@ dependencies:
   '@meilisearch/instant-meilisearch': 0.2.4
   '@types/react-instantsearch-dom': 6.8.0
   isomorphic-unfetch: 3.1.0
-  next: 10.0.3_e87f6653ca6c482a789327ecd53bd631
+  next: 10.0.3_701531e314415eaf8b8ee03841a4ba99
   next-offline: 5.0.3_next@10.0.3
-  next-seo: 4.17.0_742531be2682752b93d7121702b08a99
-  react: 17.0.1
-  react-dom: 17.0.1_react@17.0.1
-  react-instantsearch-dom: 6.8.2_react-dom@17.0.1+react@17.0.1
+  next-seo: 4.17.0_c5f76488fc6441d074e53d40467a6e24
+  react: 17.0.2
+  react-dom: 17.0.2_react@17.0.2
+  react-instantsearch-dom: 6.8.2_react-dom@17.0.2+react@17.0.2
   sass: 1.29.0
   semantic-ui-css: 2.4.1
-  semantic-ui-react: 2.0.1_react-dom@17.0.1+react@17.0.1
+  semantic-ui-react: 2.0.1_react-dom@17.0.2+react@17.0.2
 devDependencies:
   '@types/node': 14.14.10
-  '@types/react': 17.0.0
+  '@types/react': 17.0.60
   typescript: 4.1.2
 lockfileVersion: 5.2
 packages:
@@ -1009,22 +1009,22 @@ packages:
     dev: false
     resolution:
       integrity: sha512-jBD+G8+LWpMBBWvVcdr4QysjUE4mU/syrhN17o1u3gx0/WzJB1kwiVZAXRtWbsIPOwW8pF/YJV5+nmetPzepXg==
-  /@fluentui/react-component-event-listener/0.51.2_react-dom@17.0.1+react@17.0.1:
+  /@fluentui/react-component-event-listener/0.51.2_react-dom@17.0.2+react@17.0.2:
     dependencies:
       '@babel/runtime': 7.12.5
-      react: 17.0.1
-      react-dom: 17.0.1_react@17.0.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     dev: false
     peerDependencies:
       react: ^16.8.0
       react-dom: ^16.8.0
     resolution:
       integrity: sha512-myfDuwU/MRGH5hqldLmwfMAn7FoXCCspdknWg+A0Tyf+mjUsgWlqRewLapon8mJqprZzrH1obPxONV/lVI3Quw==
-  /@fluentui/react-component-ref/0.51.2_react-dom@17.0.1+react@17.0.1:
+  /@fluentui/react-component-ref/0.51.2_react-dom@17.0.2+react@17.0.2:
     dependencies:
       '@babel/runtime': 7.12.5
-      react: 17.0.1
-      react-dom: 17.0.1_react@17.0.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       react-is: 16.13.1
     dev: false
     peerDependencies:
@@ -1095,7 +1095,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-JaiycQZZbqViaMZgRGYcPIdCPDz+qRnqEGxbhQlrxyPaBaOtsrAEkGf1SS2wJZKa/ncxqWHMfSvizDcGcz/ygQ==
-  /@next/react-dev-overlay/10.0.3_9bc0526c8b535b2dad29bb0e3840dff1:
+  /@next/react-dev-overlay/10.0.3_0b7730c0422a08a55d63383b3d6c0d3c:
     dependencies:
       '@babel/code-frame': 7.10.4
       ally.js: 1.4.1
@@ -1103,8 +1103,8 @@ packages:
       chalk: 4.0.0
       classnames: 2.2.6
       data-uri-to-buffer: 3.0.0
-      react: 17.0.1
-      react-dom: 17.0.1_react@17.0.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       shell-quote: 1.7.2
       source-map: 0.8.0-beta.0
       stacktrace-parser: 0.1.10
@@ -1169,12 +1169,12 @@ packages:
       rollup: ^1.20.0||^2.0.0
     resolution:
       integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==
-  /@semantic-ui-react/event-stack/3.1.1_react-dom@17.0.1+react@17.0.1:
+  /@semantic-ui-react/event-stack/3.1.1_react-dom@17.0.2+react@17.0.2:
     dependencies:
       exenv: 1.2.2
       prop-types: 15.7.2
-      react: 17.0.1
-      react-dom: 17.0.1_react@17.0.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     dev: false
     peerDependencies:
       react: ^16.0.0
@@ -1239,14 +1239,27 @@ packages:
     dependencies:
       '@types/prop-types': 15.7.3
       csstype: 3.0.4
+    dev: false
     resolution:
       integrity: sha512-aj/L7RIMsRlWML3YB6KZiXB3fV2t41+5RBGYF8z+tAKU43Px8C3cYUZsDvf1/+Bm4FK21QWBrDutu8ZJ/70qOw==
+  /@types/react/17.0.60:
+    dependencies:
+      '@types/prop-types': 15.7.3
+      '@types/scheduler': 0.16.3
+      csstype: 3.0.4
+    dev: true
+    resolution:
+      integrity: sha512-pCH7bqWIfzHs3D+PDs3O/COCQJka+Kcw3RnO9rFA2zalqoXg7cNjJDh6mZ7oRtY1wmY4LVwDdAbA1F7Z8tv3BQ==
   /@types/resolve/0.0.8:
     dependencies:
       '@types/node': 14.14.7
     dev: false
     resolution:
       integrity: sha512-auApPaJf3NPfe18hSoJkp8EbZzer2ISk7o8mCC3M9he/a04+gbMF97NkpD2S8riMGvm4BMRI59/SZQSaLTKpsQ==
+  /@types/scheduler/0.16.3:
+    dev: true
+    resolution:
+      integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==
   /@webassemblyjs/ast/1.9.0:
     dependencies:
       '@webassemblyjs/helper-module-context': 1.9.0
@@ -2211,7 +2224,7 @@ packages:
     resolution:
       integrity: sha512-V8yBI3+ZLDVomoWICO6kq/CD28Y4r1M7CWeO4AGpMdMfseu8bkSubBmUPySMGKRTS+su4XQ07zUkAsiu9FCWTg==
   /core-js/2.6.11:
-    deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
+    deprecated: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
     dev: false
     requiresBuild: true
     resolution:
@@ -3884,7 +3897,7 @@ packages:
     dependencies:
       copy-webpack-plugin: 5.1.2
       fs-extra: 8.1.0
-      next: 10.0.3_e87f6653ca6c482a789327ecd53bd631
+      next: 10.0.3_701531e314415eaf8b8ee03841a4ba99
       workbox-webpack-plugin: 5.1.4
     dev: false
     peerDependencies:
@@ -3892,11 +3905,11 @@ packages:
       webpack: ^4.19.1
     resolution:
       integrity: sha512-c0UwdaPZPpFWB25pIaaTKeD6cbqWoTyJRThDF3wCOTcBIXubso9NGF0yZ7xSOlZWix1UFixcITdSAaMyg0Wh1g==
-  /next-seo/4.17.0_742531be2682752b93d7121702b08a99:
+  /next-seo/4.17.0_c5f76488fc6441d074e53d40467a6e24:
     dependencies:
-      next: 10.0.3_e87f6653ca6c482a789327ecd53bd631
-      react: 17.0.1
-      react-dom: 17.0.1_react@17.0.1
+      next: 10.0.3_701531e314415eaf8b8ee03841a4ba99
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     dev: false
     peerDependencies:
       next: ^8.1.1-canary.54 || ^9.0.0 || ^10.0.0
@@ -3908,14 +3921,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-yobR/ogoFpsBICCOPchCS524NCw=
-  /next/10.0.3_e87f6653ca6c482a789327ecd53bd631:
+  /next/10.0.3_701531e314415eaf8b8ee03841a4ba99:
     dependencies:
       '@ampproject/toolbox-optimizer': 2.7.0-alpha.1
       '@babel/runtime': 7.12.5
       '@hapi/accept': 5.0.1
       '@next/env': 10.0.3
       '@next/polyfill-module': 10.0.3
-      '@next/react-dev-overlay': 10.0.3_9bc0526c8b535b2dad29bb0e3840dff1
+      '@next/react-dev-overlay': 10.0.3_0b7730c0422a08a55d63383b3d6c0d3c
       '@next/react-refresh-utils': 10.0.3_66609d456e1c4fc52398fef065f8d988
       ast-types: 0.13.2
       babel-plugin-transform-define: 2.0.0
@@ -3941,8 +3954,8 @@ packages:
       process: 0.11.10
       prop-types: 15.7.2
       raw-body: 2.4.1
-      react: 17.0.1
-      react-dom: 17.0.1_react@17.0.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       react-is: 16.13.1
       react-refresh: 0.8.3
       resolve-url-loader: 3.1.2
@@ -3950,8 +3963,8 @@ packages:
       schema-utils: 2.7.1
       stream-browserify: 3.0.0
       style-loader: 1.2.1_webpack@4.44.1
-      styled-jsx: 3.3.2_react@17.0.1
-      use-subscription: 1.5.1_react@17.0.1
+      styled-jsx: 3.3.2_react@17.0.2
+      use-subscription: 1.5.1_react@17.0.2
       vm-browserify: 1.1.2
       watchpack: 2.0.0-beta.13
       webpack: 4.44.1
@@ -4083,7 +4096,7 @@ packages:
     engines:
       node: '>=0.10.0'
     resolution:
-      integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
+      integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==
   /object-copy/0.1.0:
     dependencies:
       copy-descriptor: 0.1.1
@@ -4542,27 +4555,27 @@ packages:
     optional: true
     resolution:
       integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==
-  /react-dom/17.0.1_react@17.0.1:
+  /react-dom/17.0.2_react@17.0.2:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-      react: 17.0.1
-      scheduler: 0.20.1
+      react: 17.0.2
+      scheduler: 0.20.2
     dev: false
     peerDependencies:
-      react: 17.0.1
+      react: 17.0.2
     resolution:
-      integrity: sha512-6eV150oJZ9U2t9svnsspTMrWNyHc6chX0KzDeAOXftRa8bNeOKTTfCJ7KorIwenkHd2xqVTBTCZd79yk/lx/Ug==
+      integrity: sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
   /react-fast-compare/3.2.0:
     dev: false
     resolution:
       integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
-  /react-instantsearch-core/6.8.2_react@17.0.1:
+  /react-instantsearch-core/6.8.2_react@17.0.2:
     dependencies:
       '@babel/runtime': 7.12.5
       algoliasearch-helper: 3.2.2
       prop-types: 15.7.2
-      react: 17.0.1
+      react: 17.0.2
       react-fast-compare: 3.2.0
     dev: false
     peerDependencies:
@@ -4570,16 +4583,16 @@ packages:
       react: '>= 16.3.0 < 17'
     resolution:
       integrity: sha512-UdAjcNIXb2mSECEDS/2XuB4W6rcbnph1NjJBUpY5TLLzSCdKXNTzS2PxF5hkdeuY0L/m/hvDQX6YqxV28PqKLA==
-  /react-instantsearch-dom/6.8.2_react-dom@17.0.1+react@17.0.1:
+  /react-instantsearch-dom/6.8.2_react-dom@17.0.2+react@17.0.2:
     dependencies:
       '@babel/runtime': 7.12.5
       algoliasearch-helper: 3.2.2
       classnames: 2.2.6
       prop-types: 15.7.2
-      react: 17.0.1
-      react-dom: 17.0.1_react@17.0.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       react-fast-compare: 3.2.0
-      react-instantsearch-core: 6.8.2_react@17.0.1
+      react-instantsearch-core: 6.8.2_react@17.0.2
     dev: false
     peerDependencies:
       react: '>= 16.3.0 < 17'
@@ -4590,10 +4603,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
-  /react-popper/2.2.3_7de2ed5d52219db856e6db5374f9742f:
+  /react-popper/2.2.3_bec1e220b10db7dea528c369eec6ee30:
     dependencies:
       '@popperjs/core': 2.5.4
-      react: 17.0.1
+      react: 17.0.2
       react-fast-compare: 3.2.0
       warning: 4.0.3
     dev: false
@@ -4608,7 +4621,7 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
-  /react/17.0.1:
+  /react/17.0.2:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
@@ -4616,7 +4629,7 @@ packages:
     engines:
       node: '>=0.10.0'
     resolution:
-      integrity: sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w==
+      integrity: sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
   /readable-stream/2.3.7:
     dependencies:
       core-util-is: 1.0.2
@@ -4756,7 +4769,7 @@ packages:
     resolution:
       integrity: sha512-QEb4A76c8Mi7I3xNKXlRKQSlLBwjUV/ULFMP+G7n3/7tJZ8MG5wsZ3ucxP1Jz8Vevn6fnJsxDx9cIls+utGzPQ==
   /resolve-url/0.2.1:
-    deprecated: 'https://github.com/lydell/resolve-url#deprecated'
+    deprecated: https://github.com/lydell/resolve-url#deprecated
     dev: false
     resolution:
       integrity: sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
@@ -4898,13 +4911,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-ZpwAUFgnvAUCdkjwPREny+17BpUj8nh5Yr6zKPGtLNTLrmtoRYIjm7njP24COhjJldjwW1dcv52Lpf4tNZVVRA==
-  /scheduler/0.20.1:
+  /scheduler/0.20.2:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
     dev: false
     resolution:
-      integrity: sha512-LKTe+2xNJBNxu/QhHvDR14wUXHRQbVY5ZOYpOGWRzhydZUqrLb2JBvLPY7cAqFmqrWuDED0Mjk7013SZiOz6Bw==
+      integrity: sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==
   /schema-utils/1.0.0:
     dependencies:
       ajv: 6.12.6
@@ -4941,22 +4954,22 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Pkp0p9oWOxlH0kODx7qFpIRYpK1T4WJOO4lNnpNPOoWKCrYsfHqYSKgk5fHfQtnWnsAKy7nLJMW02bgDWWFZFg==
-  /semantic-ui-react/2.0.1_react-dom@17.0.1+react@17.0.1:
+  /semantic-ui-react/2.0.1_react-dom@17.0.2+react@17.0.2:
     dependencies:
       '@babel/runtime': 7.12.5
-      '@fluentui/react-component-event-listener': 0.51.2_react-dom@17.0.1+react@17.0.1
-      '@fluentui/react-component-ref': 0.51.2_react-dom@17.0.1+react@17.0.1
+      '@fluentui/react-component-event-listener': 0.51.2_react-dom@17.0.2+react@17.0.2
+      '@fluentui/react-component-ref': 0.51.2_react-dom@17.0.2+react@17.0.2
       '@popperjs/core': 2.5.4
-      '@semantic-ui-react/event-stack': 3.1.1_react-dom@17.0.1+react@17.0.1
+      '@semantic-ui-react/event-stack': 3.1.1_react-dom@17.0.2+react@17.0.2
       clsx: 1.1.1
       keyboard-key: 1.1.0
       lodash: 4.17.20
       lodash-es: 4.17.15
       prop-types: 15.7.2
-      react: 17.0.1
-      react-dom: 17.0.1_react@17.0.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       react-is: 16.13.1
-      react-popper: 2.2.3_7de2ed5d52219db856e6db5374f9742f
+      react-popper: 2.2.3_bec1e220b10db7dea528c369eec6ee30
       shallowequal: 1.1.0
     dev: false
     peerDependencies:
@@ -5333,13 +5346,13 @@ packages:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
       integrity: sha512-ByHSTQvHLkWE9Ir5+lGbVOXhxX10fbprhLvdg96wedFZb4NDekDPxVKv5Fwmio+QcMlkkNfuK+5W1peQ5CUhZg==
-  /styled-jsx/3.3.2_react@17.0.1:
+  /styled-jsx/3.3.2_react@17.0.2:
     dependencies:
       '@babel/types': 7.8.3
       babel-plugin-syntax-jsx: 6.18.0
       convert-source-map: 1.7.0
       loader-utils: 1.2.3
-      react: 17.0.1
+      react: 17.0.2
       source-map: 0.7.3
       string-hash: 1.1.3
       stylis: 3.5.4
@@ -5707,7 +5720,7 @@ packages:
     resolution:
       integrity: sha512-B0yRTzYdUCCn9n+F4+Gh4yIDtMQcaJsmYBDsTSG8g/OejKBodLQ2IHfN3bM7jUsRXndopT7OIXWdYqc1fjmV6g==
   /urix/0.1.0:
-    deprecated: 'Please see https://github.com/lydell/urix#deprecated'
+    deprecated: Please see https://github.com/lydell/urix#deprecated
     dev: false
     resolution:
       integrity: sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
@@ -5718,10 +5731,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-ODjpfPxgUh63PFJajlW/3Z4uKPE=
-  /use-subscription/1.5.1_react@17.0.1:
+  /use-subscription/1.5.1_react@17.0.2:
     dependencies:
       object-assign: 4.1.1
-      react: 17.0.1
+      react: 17.0.2
     dev: false
     peerDependencies:
       react: ^16.8.0 || ^17.0.0
@@ -6045,14 +6058,14 @@ packages:
 specifiers:
   '@meilisearch/instant-meilisearch': 0.2.4
   '@types/node': 14.14.10
-  '@types/react': 17.0.0
+  '@types/react': 17.0.60
   '@types/react-instantsearch-dom': 6.8.0
   isomorphic-unfetch: 3.1.0
   next: 10.0.3
   next-offline: 5.0.3
   next-seo: 4.17.0
-  react: 17.0.1
-  react-dom: 17.0.1
+  react: 17.0.2
+  react-dom: 17.0.2
   react-instantsearch-dom: 6.8.2
   sass: ^1.29.0
   semantic-ui-css: 2.4.1
