@@ -1,5 +1,5 @@
 dependencies:
-  '@meilisearch/instant-meilisearch': 0.2.4
+  '@meilisearch/instant-meilisearch': 0.13.2
   '@types/react-instantsearch-dom': 6.8.0
   isomorphic-unfetch: 3.1.0
   next: 10.0.3_e87f6653ca6c482a789327ecd53bd631
@@ -1081,12 +1081,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-tAag0jEcjwH+P2quUfipd7liWCNX2F8NvYjQp2wtInsZxnMlypdw0FtAOLxtvvkO+GSRRbmNi8m/5y42PQJYCQ==
-  /@meilisearch/instant-meilisearch/0.2.4:
+  /@meilisearch/instant-meilisearch/0.13.2:
     dependencies:
-      meilisearch: 0.16.1
+      meilisearch: 0.33.0
     dev: false
     resolution:
-      integrity: sha512-l8a3i9kjs3xUc4WLM7PJbah+LuONzM8lg4khcdAFFqdZdFCFZ5tNQ9qqmze9+UVYkhRWmtP89EtdjrONqQMnjg==
+      integrity: sha512-Yo7ceLmtJWFz5MDzW2gs9iMliZWx4dZiFIFMvwcJlrhwCZT3TN6kRB3qiaOUlQkoJ0fY7yqfhAPN/tdHEWU59w==
   /@next/env/10.0.3:
     dev: false
     resolution:
@@ -2211,7 +2211,7 @@ packages:
     resolution:
       integrity: sha512-V8yBI3+ZLDVomoWICO6kq/CD28Y4r1M7CWeO4AGpMdMfseu8bkSubBmUPySMGKRTS+su4XQ07zUkAsiu9FCWTg==
   /core-js/2.6.11:
-    deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
+    deprecated: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
     dev: false
     requiresBuild: true
     resolution:
@@ -2260,6 +2260,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-KBPUbqgFjzWlVcURG+Svp9TlhA5uliYtiNx/0r8nv0pdypeQCRJ9IaSIc3q/x3q8t3F75cHuwxVql1HFGHCNJQ==
+  /cross-fetch/3.1.6:
+    dependencies:
+      node-fetch: 2.6.11
+    dev: false
+    resolution:
+      integrity: sha512-riRvo06crlE8HiqOwIpQhxwdOk4fOeR7FVM/wXoxchFEqMNUjvbs3bfo4OTgMEMHzppd4DxFBDbyySj8Cv781g==
   /crypto-browserify/3.12.0:
     dependencies:
       browserify-cipher: 1.0.1
@@ -3692,12 +3698,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-xitP+WxNPcTTOgnTJcrhM0xvdPepipPSf3I8EIpGKeFLjt3PlJLIDG3u8EX53ZIubkb+5U2+3rELYpEhHhzdkg==
-  /meilisearch/0.16.1:
+  /meilisearch/0.33.0:
     dependencies:
-      cross-fetch: 3.0.6
+      cross-fetch: 3.1.6
     dev: false
     resolution:
-      integrity: sha512-KrKDaX0gvsiIKGbmmUShrv4xLQ0BqUjhftQ4/2PM1lMHmhUyfTFzrUfK3CToRAlUxZ/sEpf8SeAlTkKP4QBGsw==
+      integrity: sha512-bYPb9WyITnJfzf92e7QFK8Rc50DmshFWxypXCs3ILlpNh8pT15A7KSu9Xgnnk/K3G/4vb3wkxxtFS4sxNkWB8w==
   /memory-fs/0.4.1:
     dependencies:
       errno: 0.1.7
@@ -3993,6 +3999,19 @@ packages:
       node: 4.x || >=6.0.0
     resolution:
       integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
+  /node-fetch/2.6.11:
+    dependencies:
+      whatwg-url: 5.0.0
+    dev: false
+    engines:
+      node: 4.x || >=6.0.0
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
+    resolution:
+      integrity: sha512-4I6pdBY1EthSqDmJkiNk3JIT8cswwR9nfeW/cPdUagJYEQG7R95WRH74wpz7ma8Gh/9dI9FP+OU+0E4FvtA55w==
   /node-html-parser/1.4.9:
     dependencies:
       he: 1.2.0
@@ -4756,7 +4775,7 @@ packages:
     resolution:
       integrity: sha512-QEb4A76c8Mi7I3xNKXlRKQSlLBwjUV/ULFMP+G7n3/7tJZ8MG5wsZ3ucxP1Jz8Vevn6fnJsxDx9cIls+utGzPQ==
   /resolve-url/0.2.1:
-    deprecated: 'https://github.com/lydell/resolve-url#deprecated'
+    deprecated: https://github.com/lydell/resolve-url#deprecated
     dev: false
     resolution:
       integrity: sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
@@ -5538,6 +5557,10 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
+  /tr46/0.0.3:
+    dev: false
+    resolution:
+      integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==
   /tr46/1.0.1:
     dependencies:
       punycode: 2.1.1
@@ -5707,7 +5730,7 @@ packages:
     resolution:
       integrity: sha512-B0yRTzYdUCCn9n+F4+Gh4yIDtMQcaJsmYBDsTSG8g/OejKBodLQ2IHfN3bM7jUsRXndopT7OIXWdYqc1fjmV6g==
   /urix/0.1.0:
-    deprecated: 'Please see https://github.com/lydell/urix#deprecated'
+    deprecated: Please see https://github.com/lydell/urix#deprecated
     dev: false
     resolution:
       integrity: sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
@@ -5792,6 +5815,10 @@ packages:
       node: '>=10.13.0'
     resolution:
       integrity: sha512-ZEFq2mx/k5qgQwgi6NOm+2ImICb8ngAkA/rZ6oyXZ7SgPn3pncf+nfhYTCrs3lmHwOxnPtGLTOuFLfpSMh1VMA==
+  /webidl-conversions/3.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==
   /webidl-conversions/4.0.2:
     dev: false
     resolution:
@@ -5851,6 +5878,13 @@ packages:
         optional: true
     resolution:
       integrity: sha512-4UOGAohv/VGUNQJstzEywwNxqX417FnjZgZJpJQegddzPmTvph37eBIRbRTfdySXzVtJXLJfbMN3mMYhM6GdmQ==
+  /whatwg-url/5.0.0:
+    dependencies:
+      tr46: 0.0.3
+      webidl-conversions: 3.0.1
+    dev: false
+    resolution:
+      integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==
   /whatwg-url/7.1.0:
     dependencies:
       lodash.sortby: 4.7.0
@@ -6043,7 +6077,7 @@ packages:
     resolution:
       integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
 specifiers:
-  '@meilisearch/instant-meilisearch': 0.2.4
+  '@meilisearch/instant-meilisearch': 0.13.2
   '@types/node': 14.14.10
   '@types/react': 17.0.0
   '@types/react-instantsearch-dom': 6.8.0

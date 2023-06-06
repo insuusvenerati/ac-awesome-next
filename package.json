@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@meilisearch/instant-meilisearch": "0.2.4",
+    "@meilisearch/instant-meilisearch": "0.13.2",
     "@types/react-instantsearch-dom": "6.8.0",
     "isomorphic-unfetch": "3.1.0",
     "next": "10.0.3",
